@@ -11,7 +11,7 @@ connectionDetails <- Eunomia::getEunomiaConnectionDetails()
 conn <- connect(connectionDetails)
 cdmSchema <- "main"
 
-# 1) Extract data
+# 1. Extract data
 df <- extractPatients(connection = conn, cdmSchema = cdmSchema)
 print("------- The top 10 records of the extracted data -------")
 print(head(df, 10))
@@ -19,15 +19,13 @@ print(head(df, 10))
 # Clean up
 DatabaseConnector::disconnect(conn)
 
-# 2) Plot trends by year
+# 2. Plot trends by year
 print("------- Plot trends by YEAR -------")
-plotYear <- plotTrend(data = df, byMonth = FALSE)
-print(plotYear)
+plotTrend(data = df, byMonth = FALSE)
 
-# 3) Plot trends by month
+# 3. Plot trends by month
 print("------- Plot trends by MONTH -------")
-plotMonth <- plotTrend(data = df, byMonth = TRUE)
-print(plotMonth)
+plotTrend(data = df, byMonth = TRUE)
 
 # 4) Launch Shiny app
 launchShinyAppDemo()
