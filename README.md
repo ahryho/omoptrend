@@ -1,10 +1,10 @@
-# R programmer for Health Data Science
+# omoptrend
 
-Welcome to the round of the recruitment process for R programmer for Health Data Science
+_This package is an exercise for Health Data Science position at EMC._
 
-## Exercise
+An R package for exploring patient condition trends in OMOP CDM databases. It provides functions to extract patient counts, visualize trends, and launch an interactive Shiny app.
 
-We would like you to complete a short take-home exercise to help us evaluate the R skills needed for the position.
+## The scope of the exercise
 
 Familiarize yourself with the [OMOP CDM](https://ohdsi.github.io/CommonDataModel/cdm54.html) format and the [Eunomia R package](https://github.com/OHDSI/Eunomia)
 
@@ -24,35 +24,33 @@ This function should take a database connection as input, and extract counts of 
 
 Create a simple shiny app should have a pulldown menu to filter the data by condition and a checkbox (boolean input) for the `byMonth` parameter in `plotTrend`. The app should then plot the frequency of the selected condition by the selected time frame (Year or Month). `launchShinyApp` should start the shiny app contained in the R package.
 
-Creating the Shiny App will give you extra points.
-
 We would like you to make an R package that does this and provides a simple unit test using (https://testthat.r-lib.org/) of the `extractPatients` and `plotTrend` functions. Unit tests can run on the SQLite OMOP CDM database in the Eunomia R package.
 
 In the submitted package there should be a file named codeToRun.R which provides an example of running the functions in the package on an OMOP CDM database. this file should call the functions `extractPatients`, `plotTrend` (by year), `plotTrend` (by month), and `launchShinyApp`.
 
-The codeToRun.R script should run without errors.
+## Installation
 
-## Evaluation
-You will be evaluated on the critera below. 
+Clone the repository and install from source:
 
-### Completeness and correctness: up to 5 points:
+```r
+# Install devtools if not already installed
+install.packages("devtools")
 
-- All three tasks are completed and return correct results. 4 pts
-- Two tasks are completed and return correct results. 3 pts
-- At least two tasks are completed There may be bugs or errors in the calculations, but works end to end. 2 pts
-- At least one task is completed, possibly with errors but works end to end. 1 pt
-- Anything else. 0 pts
+# Install omoptrend with vignettes
+devtools::install(build_vignettes = TRUE)
+```
 
-### Code style and conventions: up to 4 points:
-
-- Code is logically organized and clearly commented. Style follows the HADES style guideline https://ohdsi.github.io/Hades/codeStyle.html. Code is fully documented specifying inputs, outputs and with a clear description of what the functions do. There are at least some tests or assertions and exception handling (if necessary). 4 pts
-- Code is logically organized and clearly commented.  Style follows the HADES style guideline https://ohdsi.github.io/Hades/codeStyle.html. Code is fully documented specifying inputs, outputs and with a clear description of what the functions do. 3 pts
-- Code is logically organized, but documentation is inconsistent or confusing. 2 pts
-- Code is disorganized and hard to follow. Inconsistent and arbitrary style. 1 pt
-- Anything else. 0 pts
-
-## Submitting a solution
-Please commit all code into this repository using git, create a zip file and return via email, by or before **Tuesday, December 9 2025**.
+## Key Files
+* `R/`: Folder with the core functions:
+    * `extractPatients(connection, cdmSchema)`: Extract patient counts by condition and time
+    * `plotTrend(data, byMonth = FALSE)`: Plot condition trends by year or month
+    * `launchShinyApp(data)`: Launch interactive Shiny app
+    * `launchShinyAppDemo()`: Launch interactive Shiny app
+    * `validateConnection`, `validateDialect`, `validateExtractedData`: Validation helper scripts
+* `scripts`: Folder containing scripts for exploring the raw data (_interviews.json_) and testing that Gemini connection works
+* `src`: Folder containing main scripts for the analysis 
+    * `src.main.py`: Main script for running the code
+    * `src.extractor.py`: Script for extracting the information from the input data and 
 
 
 ## Vignettes
