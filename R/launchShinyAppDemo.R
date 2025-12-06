@@ -19,11 +19,10 @@
 #'  The plot refreshes automatically when the user changes the condition, time granularity, or calendar range.
 #'
 #' @return
-#' This function does not return a value. It launches a Shiny application in the user's default web browser.
+#' This function does not return a value. It launches a Shiny application.
 #'
 #' @examples
 #' \dontrun{
-#' # Run the Shiny App
 #' launchShinyAppDemo()
 #' }
 #'

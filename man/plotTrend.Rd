@@ -22,11 +22,6 @@ per year (default) or per month for each condition in "data".
 }
 \examples{
 \dontrun{
-p <- plotTrend(data = df, byMonth = FALSE)
-print(p)
-}
-
-\dontrun{
 connection_details <- Eunomia::getEunomiaConnectionDetails()
 conn <- connect(connection_details)
 

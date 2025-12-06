@@ -7,7 +7,7 @@
 launchShinyAppDemo()
 }
 \value{
-This function does not return a value. It launches a Shiny application in the user's default web browser.
+This function does not return a value. It launches a Shiny application.
 }
 \description{
 This is a helper function that automates the workflow of the package.
@@ -31,7 +31,6 @@ The plot refreshes automatically when the user changes the condition, time granu
 }
 \examples{
 \dontrun{
-# Run the Shiny App
 launchShinyAppDemo()
 }
 

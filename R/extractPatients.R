@@ -4,8 +4,8 @@
 #' Queries OMOP CDM condition_occurrence (joined to concept) to compute distinct
 #' patient counts per condition, aggregated by year and month.
 #'
-#' @param connection DatabaseConnector connection object. Must include a 'dbms' attribute.
-#' @param cdmSchema Character. Schema that contains OMOP CDM tables (e.g., "main" for SQLite, or "cdm" / "database.cdm").
+#' @param connection DatabaseConnector connection object.
+#' @param cdmSchema Character. Schema that contains OMOP CDM tables.
 #'
 #' @return A data.frame with columns:
 #'   - condition_concept_id (integer)

@@ -7,9 +7,9 @@
 extractPatients(connection, cdmSchema = "main")
 }
 \arguments{
-\item{connection}{DatabaseConnector connection object. Must include a 'dbms' attribute.}
+\item{connection}{DatabaseConnector connection object.}
 
-\item{cdmSchema}{Character. Schema that contains OMOP CDM tables (e.g., "main" for SQLite, or "cdm" / "database.cdm").}
+\item{cdmSchema}{Character. Schema that contains OMOP CDM tables.}
 }
 \value{
 A data.frame with columns:

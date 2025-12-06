@@ -21,7 +21,7 @@
 #' connectionDetails <- Eunomia::getEunomiaConnectionDetails()
 #' conn <- DatabaseConnector::connect(connectionDetails)
 #' df <- extractPatients(connection = conn, cdmSchema = "main")
-#' launchShinyApp(df)
+#' launchShinyApp(data = df)
 #' }
 #'
 #' @export

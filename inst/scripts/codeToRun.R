@@ -21,11 +21,13 @@ DatabaseConnector::disconnect(conn)
 
 # 2. Plot trends by year
 print("------- Plot trends by YEAR -------")
-plotTrend(data = df, byMonth = FALSE)
+plotYear <- plotTrend(data = df, byMonth = FALSE)
+print(plotYear)
 
 # 3. Plot trends by month
 print("------- Plot trends by MONTH -------")
-plotTrend(data = df, byMonth = TRUE)
+plotMonth <- plotTrend(data = df, byMonth = TRUE)
+print(plotMonth)
 
 # 4) Launch Shiny app
-launchShinyAppDemo()
+launchShinyApp(data = df)

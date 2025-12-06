@@ -30,7 +30,7 @@ The plot refreshes automatically when the user changes the condition, time granu
 connectionDetails <- Eunomia::getEunomiaConnectionDetails()
 conn <- DatabaseConnector::connect(connectionDetails)
 df <- extractPatients(connection = conn, cdmSchema = "main")
-launchShinyApp(df)
+launchShinyApp(data = df)
 }
 
 }
