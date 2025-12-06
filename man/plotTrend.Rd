@@ -17,12 +17,26 @@ FALSE = plot by year (aggregated across months).}
 ggplot object showing patient count trends
 }
 \description{
-Plot condition patient counts by year or aggregated month
+The funciton takes output from the \code{extractPatients} function as input and returns a plot with the number of patients
+per year (default) or per month for each condition in "data".
 }
 \examples{
 \dontrun{
 p <- plotTrend(data = df, byMonth = FALSE)
 print(p)
+}
+
+\dontrun{
+connection_details <- Eunomia::getEunomiaConnectionDetails()
+conn <- connect(connection_details)
+
+df <- extractPatients(connection = conn, cdmSchema = "main")
+
+# Plot trends by YEAR
+plotTrend(data = df)
+
+# Plot trends by MONTH
+plotTrend(data = df, byMonth = TRUE)
 }
 
 }

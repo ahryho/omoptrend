@@ -2,13 +2,35 @@
 % Please edit documentation in R/launchShinyApp.R
 \name{launchShinyApp}
 \alias{launchShinyApp}
-\title{Launch the omoptrend Shiny app with pre-extracted data}
+\title{Launch the omoptrend Shiny App with pre-extracted data}
 \usage{
 launchShinyApp(data)
 }
 \arguments{
 \item{data}{data.frame produced by extractPatients()}
 }
+\value{
+This function does not return a value. It launches a Shiny application.
+}
 \description{
-Launch the omoptrend Shiny app with pre-extracted data
+This function demonstrates the full workflow of the \code{omoptrend} package using the  OMOP CDM dataset.
+}
+\details{
+The Shiny App contains:
+\itemize{
+\item Condition selector (pulldown menu): Lets the user choose a condition from the dataset.
+\item Time granularity toggle (checkbox): Switches between yearly (byMonth = FALSE) and monthly (byMonth = TRUE) views.
+\item Calendar input (dateRangeInput): Allows the user to filter the dataset by a specific date range, so they can zoom in on a subset of years or months.
+\item Dynamic plot: Uses plotTrend() internally to render the frequency of the selected condition over the chosen time frame.
+The plot refreshes automatically when the user changes the condition, time granularity, or calendar range.
+}
+}
+\examples{
+\dontrun{
+connectionDetails <- Eunomia::getEunomiaConnectionDetails()
+conn <- DatabaseConnector::connect(connectionDetails)
+df <- extractPatients(connection = conn, cdmSchema = "main")
+launchShinyApp(df)
+}
+
 }

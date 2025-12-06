@@ -2,31 +2,36 @@
 % Please edit documentation in R/launchShinyAppDemo.R
 \name{launchShinyAppDemo}
 \alias{launchShinyAppDemo}
-\title{Run a demo Shiny App}
+\title{Launch the omoptrend Shiny App}
 \usage{
 launchShinyAppDemo()
 }
 \value{
-This function does not return a value. It launches a Shiny application
-in the user's default web browser.
+This function does not return a value. It launches a Shiny application in the user's default web browser.
 }
 \description{
-This helper function demonstrates the full workflow of the \code{omoptrend} package
-using the  OMOP CDM dataset provided by the \strong{Eunomia} package.
-It establishes a connection to the Eunomia database, extracts patient counts
-for conditions over time, and launches the interactive Shiny app for exploration.
+This is a helper function that automates the workflow of the package.
 }
 \details{
 Steps performed by this function:
 \enumerate{
-\item Establishes a connection to the Eunomia SQLite database.
+\item Establishes a Eunomia connection.
 \item Extracts patient-level condition counts from the OMOP CDM.
 \item Launches the Shiny app with the extracted data frame.
+}
+
+The Shiny App contains:
+\itemize{
+\item Condition selector (pulldown menu): Lets the user choose a condition from the dataset.
+\item Time granularity toggle (checkbox): Switches between yearly (byMonth = FALSE) and monthly (byMonth = TRUE) views.
+\item Calendar input (dateRangeInput): Allows the user to filter the dataset by a specific date range, so they can zoom in on a subset of years or months.
+\item Dynamic plot: Uses plotTrend() internally to render the frequency of the selected condition over the chosen time frame.
+The plot refreshes automatically when the user changes the condition, time granularity, or calendar range.
 }
 }
 \examples{
 \dontrun{
-# Run the demo Shiny App
+# Run the Shiny App
 launchShinyAppDemo()
 }
 
