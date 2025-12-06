@@ -1,0 +1,29 @@
+Package: omoptrend
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person("Anastasiia", "Hryhorzhevska", 
+           email = "develop.avec.moi@gmail.com",
+           role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 4.0.0)
+Imports:
+    DatabaseConnector,
+    SqlRender,
+    CommonDataModel,
+    ggplot2,
+    shiny
+Suggests:
+    testthat,
+    Eunomia,
+    devtools,
+    roxygen2,
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
+VignetteBuilder: knitr

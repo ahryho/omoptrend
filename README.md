@@ -53,3 +53,30 @@ You will be evaluated on the critera below.
 
 ## Submitting a solution
 Please commit all code into this repository using git, create a zip file and return via email, by or before **Tuesday, December 9 2025**.
+
+
+## Vignettes
+
+`omoptrend` includes vignette that demonstrate `codeToRun.R` workflow (extracting patient counts, plotting condition trends, and launching the Shiny app).
+
+### Building vignettes 
+
+To ensure the vignette HTML files are bundled into the package, build the vignettes as follow:
+
+```r
+devtools::install(build_vignettes = TRUE)
+```
+
+### Viewing vignettes 
+
+Once installed, you can browse available vignette with:
+
+```r
+browseVignettes("omoptrend")
+```
+
+or
+
+```r
+vignette("codeToRun", package = "omoptrend")
+```
