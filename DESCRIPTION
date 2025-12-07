@@ -1,11 +1,11 @@
 Package: omoptrend
-Title: What the Package Does (One Line, Title Case)
+Title: An R package for exploring patient condition trends in OMOP CDM database
 Version: 0.0.0.9000
 Authors@R: 
     person("Anastasiia", "Hryhorzhevska", 
            email = "develop.avec.moi@gmail.com",
            role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: An R package for exploring patient condition trends in OMOP CDM databases. It provides functions to extract patient counts, visualize trends, and launch an interactive Shiny app.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
