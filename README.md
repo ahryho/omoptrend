@@ -72,7 +72,7 @@ DatabaseConnector::disconnect(conn)
 ### 2. Plot trends
 
 ```r
-# _Plot yearly trends_
+# Plot yearly trends
 plotTrend(data = df)
 
 # Plot monthly trends
