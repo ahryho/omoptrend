@@ -7,7 +7,7 @@ validateConnection <- function(connection) {
   }
   # DatabaseConnector connections typically have a 'dbms' attribute
   if (is.null(attr(connection, "dbms"))) {
-    stop("Connection missing 'dbms' attribute. Provide a DatabaseConnector connection.", call. = FALSE)
+    stop("Connection missing 'dbms' attribute.", call. = FALSE)
   }
 }
 

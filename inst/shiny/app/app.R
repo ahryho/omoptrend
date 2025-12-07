@@ -4,8 +4,8 @@ library(omoptrend)
 
 # UI -------------------------------
 ui <- fluidPage(
-  # Title at the top of the app
-  titlePanel("OMOP Condition Trends"),
+  # Title of the app
+  titlePanel("OMOP CDM Condition Trends"),
 
   # Layout with sidebar for controls and main panel for plot
   sidebarLayout(
