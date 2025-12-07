@@ -85,7 +85,7 @@ plotTrend(data = df, byMonth = TRUE)
 # Launch with with pre-extracted data
 launchShinyApp(data = df)
 
-# Launch with monthly view
+# Launch automated workflow (use this if step 1 is skipped)
 launchShinyAppDemo()
 ```
 
