@@ -43,7 +43,8 @@ extractPatients <- function(connection, cdmSchema = "main") {
   # Validate and translate to target dialect
   targetDialect <- attr(connection, "dbms")
   validateDialect(targetDialect)
-  translated <- SqlRender::translate(sql = rendered, targetDialect = targetDialect)
+  # Converts the SQL template into the correct SQL required by the target database (dialect).
+  translated <- SqlRender::translate(sql = rendered, targetDialect = targetDialect) # = SQL language converter
 
   # Execute query
   df <- tryCatch({
