@@ -14,7 +14,7 @@ ui <- fluidPage(
       selectInput("condition", "Condition", choices = NULL, selected = NULL),
 
       # Checkbox to toggle between yearly vs month-only aggregated view
-      checkboxInput("byMonth", "Plot aggregated by month (Jan–Dec)", value = FALSE),
+      checkboxInput("byMonth", "Plot aggregated by month (Jan-Dec)", value = FALSE),
 
       # Calendar-style date range input to filter the dataset
       dateRangeInput("dateRange", "Filter by calendar date range",
