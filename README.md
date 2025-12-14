@@ -1,6 +1,6 @@
 # omoptrend
 
-_This package is an exercise for the Health Data Science position at the EMC._
+_A small exercise to play around with an OMOP CDM dataset using [Eunomia](https://ohdsi.github.io/Eunomia/)._
 
 An R package for exploring patient condition trends in OMOP CDM databases. It provides functions to extract patient counts, visualize trends, and launch an interactive Shiny app.
 
