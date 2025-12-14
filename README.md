@@ -24,10 +24,6 @@ This function should take a database connection as input, and extract counts of 
 
 Create a simple shiny app should have a pulldown menu to filter the data by condition and a checkbox (boolean input) for the `byMonth` parameter in `plotTrend`. The app should then plot the frequency of the selected condition by the selected time frame (Year or Month). `launchShinyApp` should start the shiny app contained in the R package.
 
-We would like you to make an R package that does this and provides a simple unit test using (https://testthat.r-lib.org/) of the `extractPatients` and `plotTrend` functions. Unit tests can run on the SQLite OMOP CDM database in the Eunomia R package.
-
-In the submitted package there should be a file named codeToRun.R which provides an example of running the functions in the package on an OMOP CDM database. this file should call the functions `extractPatients`, `plotTrend` (by year), `plotTrend` (by month), and `launchShinyApp`.
-
 ## Installation
 
 Clone the repository and install from source:
