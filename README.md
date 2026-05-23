@@ -1,20 +1,16 @@
 # omoptrend
 
-_A small exercise to play around with an OMOP CDM dataset using [Eunomia](https://ohdsi.github.io/Eunomia/)._
+_A small exercise to play around with an [OMOP CDM](https://ohdsi.github.io/CommonDataModel/cdm54.html) dataset using [Eunomia](https://ohdsi.github.io/Eunomia/)._
 
 An R package for exploring patient condition trends in OMOP CDM databases. It provides functions to extract patient counts, visualize trends, and launch an interactive Shiny app.
 
-## The scope of the exercise
-
-Familiarize yourself with the [OMOP CDM](https://ohdsi.github.io/CommonDataModel/cdm54.html) format and the [Eunomia R package](https://github.com/OHDSI/Eunomia)
-
-The exercise involves the following:
+## The scope 
 
 Create an R package that exports the following functions:
 
 1. `extractPatients(connection)`
 
-This function should take a database connection as input, and extract counts of all conditions by year and month from the condition occurence table in the OMOP CDM database. The function should be able to do this for different sql dialects using the [SqlRender R package](https://ohdsi.github.io/SqlRender/). It should return a data.frame with the data needed for the `plotTrend` function.
+This function takes a database connection as input, and extract counts of all conditions by year and month from the condition occurence table in the OMOP CDM database. The function is able to do this for different sql dialects using the [SqlRender R package](https://ohdsi.github.io/SqlRender/). It returns a data.frame with the data needed for the `plotTrend` function.
 
 2. `plotTrend(data, byMonth = FALSE)` 
 
@@ -22,7 +18,7 @@ This function should take a database connection as input, and extract counts of 
 
 3. `launchShinyApp()`
 
-Create a simple shiny app should have a pulldown menu to filter the data by condition and a checkbox (boolean input) for the `byMonth` parameter in `plotTrend`. The app should then plot the frequency of the selected condition by the selected time frame (Year or Month). `launchShinyApp` should start the shiny app contained in the R package.
+Starts the shiny app with a pulldown menu to filter the data by condition and a checkbox (boolean input) for the `byMonth` parameter in `plotTrend`. The app then plots the frequency of the selected condition by the selected time frame (Year or Month).
 
 ## Installation
 
